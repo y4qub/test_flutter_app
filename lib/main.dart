@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:test_flutter_app/detail.dart';
 
 void main() {
   runApp(const MyApp());
@@ -62,10 +63,18 @@ class _MyHomePageState extends State<MyHomePage> {
                 colorIndex = rnd.nextInt(Colors.accents.length);
               }
               usedColors.add(colorIndex);
-              return Container(
-                color: Colors.accents[colorIndex],
-                alignment: Alignment.center,
-                child: Text(list[index]),
+              return GestureDetector(
+                onTap: () => Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (BuildContext context) =>
+                        DetailView(title: list[index]),
+                  ),
+                ),
+                child: Container(
+                  color: Colors.accents[colorIndex],
+                  alignment: Alignment.center,
+                  child: Text(list[index]),
+                ),
               );
             },
             gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
