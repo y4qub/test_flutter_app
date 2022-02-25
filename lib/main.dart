@@ -1,7 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:test_flutter_app/detail.dart';
+import 'package:test_flutter_app/pages/detail.dart';
 
 void main() {
   runApp(const MyApp());
